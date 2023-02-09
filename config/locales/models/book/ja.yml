@@ -10,7 +10,8 @@ ja:
         picture: 写真
         title: タイトル
 
-    flash:
+  flash:
+    book:
       create: 本が登録されました
       update: 本が更新されました
       destroy: 本が削除されました
