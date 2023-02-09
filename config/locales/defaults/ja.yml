@@ -113,6 +113,8 @@ ja:
     template:
       body: 次の項目を確認してください
       header: "%{model}に%{count}個のエラーが発生しました"
+  confirm:
+    destroy: 削除してもよろしいでしょうか？
   helpers:
     select:
       prompt: 選択してください
