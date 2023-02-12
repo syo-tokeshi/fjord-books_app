@@ -15,6 +15,7 @@ ja:
         street: 番地
         other_address: 建物名
         introduction: 自己紹介
+        name: 名前
         email: Eメール
         encrypted_password: 暗号化パスワード
         failed_attempts: 失敗したログイン試行回数
