@@ -145,6 +145,8 @@ en:
       header:
         one: "%{count} error prohibited this %{model} from being saved"
         other: "%{count} errors prohibited this %{model} from being saved"
+  confirm:
+    destroy: Are you sure?
   helpers:
     select:
       prompt: Please select
