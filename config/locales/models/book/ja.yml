@@ -12,6 +12,6 @@ ja:
 
   flash:
     book:
-      create: 本が登録されました
-      update: 本が更新されました
-      destroy: 本が削除されました
+      create: "%{name}が登録されました"
+      update: "%{name}が更新されました"
+      destroy: "%{name}が削除されました"
