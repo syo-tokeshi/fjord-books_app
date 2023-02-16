@@ -62,4 +62,3 @@ gem 'net-smtp'
 gem 'carrierwave'
 
 gem 'kaminari'
-gem 'rails-i18n'
