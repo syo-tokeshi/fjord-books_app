@@ -115,6 +115,10 @@ ja:
       header: "%{model}に%{count}個のエラーが発生しました"
   confirm:
     destroy: 削除してもよろしいでしょうか？
+  flash:
+    create: "%{name}が登録されました"
+    update: "%{name}が更新されました"
+    destroy: "%{name}が削除されました"
   helpers:
     select:
       prompt: 選択してください

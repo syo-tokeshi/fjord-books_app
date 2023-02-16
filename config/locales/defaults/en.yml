@@ -147,6 +147,10 @@ en:
         other: "%{count} errors prohibited this %{model} from being saved"
   confirm:
     destroy: Are you sure?
+  flash:
+    create: "%{name} was successfully created"
+    update: "%{name} was successfully updated"
+    destroy: "%{name} was successfully deleted"
   helpers:
     select:
       prompt: Please select

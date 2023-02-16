@@ -9,9 +9,3 @@ ja:
         memo: メモ
         picture: 写真
         title: タイトル
-
-  flash:
-    book:
-      create: "%{name}が登録されました"
-      update: "%{name}が更新されました"
-      destroy: "%{name}が削除されました"
