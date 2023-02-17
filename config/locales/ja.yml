@@ -217,10 +217,10 @@ ja:
       title_edit: "%{name}の編集"
     layouts:
       users:
-        index: ユーザーの一覧
+        index: ユーザー 一覧
         show: マイページ
       books:
-        index: 本一覧
+        index: 本 一覧
     pagination:
       first: '最初'
       last: '最後'
