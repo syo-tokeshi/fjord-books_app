@@ -1,46 +1,46 @@
-<h1>ユーザー詳細</h1>
+<h1><%= t('views.layouts.users.show') %></h1>
 
 <p>
-  <strong>氏名:</strong>
+  <strong><%= t('activerecord.attributes.user.name') %></strong>
   <%= @user.name %>
 </p>
 
 <p>
-  <strong>自己紹介文:</strong>
+  <strong><%= t('activerecord.attributes.user.introduction') %></strong>
   <%= @user.introduction %>
 </p>
 
 <p>
-  <strong>Eメール:</strong>
+  <strong><%= t('activerecord.attributes.user.email') %></strong>
   <%= @user.email %>
 </p>
 
 <p>
-  <strong>郵便番号:</strong>
+  <strong><%= t('activerecord.attributes.user.zip_code') %></strong>
   <%= @user.zip_code %>
 </p>
 
 <p>
-  <strong>都道府県:</strong>
+  <strong><%= t('activerecord.attributes.user.prefecture_code') %></strong>
   <%= @user.prefecture_code %>
 </p>
 
 <p>
-  <strong>市町村:</strong>
+  <strong><%= t('activerecord.attributes.user.city') %></strong>
   <%= @user.city %>
 </p>
 
 <p>
-  <strong>番地:</strong>
+  <strong><%= t('activerecord.attributes.user.street') %></strong>
   <%= @user.street %>
 </p>
 
 <p>
-  <strong>建物名:</strong>
+  <strong><%= t('activerecord.attributes.user.other_address') %></strong>
   <%= @user.other_address %>
 </p>
 
 <% if current_user == @user %>
-  <%= link_to '編集', edit_user_registration_path %> |
+  <%= link_to t('views.common.edit'), edit_user_registration_path %> |
 <% end %>
-<%= link_to '戻る', users_path %>
+<%= link_to t('views.common.back'), users_path %>
