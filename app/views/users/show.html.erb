@@ -27,7 +27,7 @@
 
 <p>
   <strong><%= User.human_attribute_name(:self_introduction) %>:</strong>
-  <%= image_tag @user.avatar %>
+  <%= image_tag @user.avatar if @user.avatar.present? %>
 </p>
 
 <% if current_user == @user %>
