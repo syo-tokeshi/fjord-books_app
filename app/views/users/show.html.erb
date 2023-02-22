@@ -33,7 +33,7 @@
   <% end %>
 </p>
 
-<%= render 'follow_form', user: @user %>
+<%= render 'follow_form', {user: @user, following_user: @following_user} %>
 
 <%= render 'follow_detail', user: @user %>
 

@@ -1,0 +1,13 @@
+<% unless user == current_user %>
+  <div>
+    <% if current_user.following?(user) %>
+      <%= form_with(model: [user, following_user], method: :delete, local: true) do |f| %>
+        <%= f.submit t('views.follow.form.unfollow') %>
+      <% end %>
+    <% else %>
+      <%= form_with(model: [user, current_user.active_relationships.build], local: true) do |f| %>
+        <%= f.submit t('views.follow.form.follow') %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
