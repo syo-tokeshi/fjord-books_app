@@ -3,7 +3,7 @@ ja:
     models:
       book: 本
       user: ユーザ
-      user_relationships: ユーザーの関連
+      user_relationship: ユーザーの関連
 
     attributes:
       book:

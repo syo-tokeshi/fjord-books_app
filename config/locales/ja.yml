@@ -239,6 +239,9 @@ ja:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+    follow:
+      notice_create: "ユーザーをフォローしました。"
+      notice_destroy: "ユーザーをアンフォローしました。"
   layouts:
     application:
       menu: メニュー
