@@ -7,14 +7,14 @@ class User < ApplicationRecord
   has_one_attached :avatar
 
   has_many :active_relationships,  class_name: 'UserRelationship',
-           foreign_key: :follower_id,
-           dependent: :destroy,
-           inverse_of: :follower
+                                   foreign_key: :follower_id,
+                                   dependent: :destroy,
+                                   inverse_of: :follower
 
   has_many :passive_relationships, class_name: 'UserRelationship',
-           foreign_key: :followed_id,
-           dependent: :destroy,
-           inverse_of: :followed
+                                   foreign_key: :followed_id,
+                                   dependent: :destroy,
+                                   inverse_of: :followed
 
   has_many :followings, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
@@ -31,5 +31,4 @@ class User < ApplicationRecord
     friendship = active_relationships.find_by(followed_id: other_user.id)
     friendship.destroy! if !!friendship
   end
-
 end
