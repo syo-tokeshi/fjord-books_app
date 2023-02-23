@@ -218,7 +218,7 @@ ja:
     layouts:
       users:
         index: ユーザー 一覧
-        show: マイページ
+        show: ユーザー詳細
       books:
         index: 本 一覧
     pagination:
