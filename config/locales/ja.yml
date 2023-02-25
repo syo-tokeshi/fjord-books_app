@@ -215,6 +215,12 @@ ja:
       delete_confirm: よろしいですか？
       title_new: "%{name}の新規作成"
       title_edit: "%{name}の編集"
+    layouts:
+      users:
+        index: ユーザー 一覧
+        show: ユーザー詳細
+      books:
+        index: 本 一覧
     pagination:
       first: '最初'
       last: '最後'
