@@ -1,7 +1,11 @@
 <%= form_with(model: report) do |form| %>
   <% if report.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(report.errors.count, "error") %> prohibited this report from being saved:</h2>
+      <h2>
+        <%= I18n.t("errors.messages.not_saved",
+                   count: report.errors.count,
+                   resource: report.class.model_name.human.downcase) %>
+      </h2>
 
       <ul>
         <% report.errors.each do |error| %>
@@ -19,11 +23,6 @@
   <div class="field">
     <%= form.label :content %>
     <%= form.text_area :content %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
   </div>
 
   <div class="actions">
