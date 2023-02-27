@@ -6,6 +6,8 @@ class ReportsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @report.comments
   end
 
   def new
@@ -17,19 +19,20 @@ class ReportsController < ApplicationController
 
   def create
     @report = Report.new(report_params)
-      if @report.save
-        redirect_to report_url(@report), notice: "Report was successfully created."
-      else
-        render :new, status: :unprocessable_entity
-      end
+    @report.user_id = current_user.id
+    if @report.save
+      redirect_to report_url(@report), notice: "Report was successfully created."
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def update
-      if @report.update(report_params)
-        redirect_to report_url(@report), notice: "Report was successfully updated."
-      else
-        render :edit, status: :unprocessable_entity
-      end
+    if @report.update(report_params)
+      redirect_to report_url(@report), notice: "Report was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -38,11 +41,12 @@ class ReportsController < ApplicationController
   end
 
   private
-    def set_report
-      @report = Report.find(params[:id])
-    end
 
-    def report_params
-      params.require(:report).permit(:title, :content, :user_id)
-    end
+  def set_report
+    @report = Report.find(params[:id])
+  end
+
+  def report_params
+    params.require(:report).permit(:title, :content)
+  end
 end
