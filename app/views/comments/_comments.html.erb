@@ -3,7 +3,7 @@
   <ul>
     <% comments.each do |comment| %>
         <li>
-          <p><%= comment.content %></p>
+          <p><%= t('activerecord.attributes.comment.content') %> : <%= comment.content %></p>
           <p><%= link_to comment.user.name_or_email, comment.user %> : <%= l comment.created_at, format: :short %></p>
           <% if current_user == comment.user %>
             <%= link_to t('views.common.edit'), edit_polymorphic_path([commentable, comment]) %> |
