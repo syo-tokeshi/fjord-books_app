@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
       redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
     else
       @comments = @commentable.comments
-      render_commentable_show
+      render_show_commentable
     end
   end
 

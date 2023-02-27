@@ -3,7 +3,7 @@ class Books::CommentsController < CommentsController
 
   private
 
-  def render_book_show
+  def render_show_commentable
     @book = @commentable
     render 'books/show'
   end

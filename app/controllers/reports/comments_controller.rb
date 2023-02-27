@@ -3,14 +3,9 @@ class Reports::CommentsController < CommentsController
 
   private
 
-  def render_reports_show
+  def render_show_commentable
     @report = @commentable
     render 'reports/show'
-  end
-
-  def render_reports_edit
-    @report = @commentable
-    render 'reports/edit'
   end
 
   def set_commentable
