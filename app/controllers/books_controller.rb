@@ -21,7 +21,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      redirect_to @book, notice: t('controllers.common.notice_create', name: Book.model_name.human) }
+      redirect_to @book, notice: t('controllers.common.notice_create', name: Book.model_name.human)
     else
       render :new
     end
