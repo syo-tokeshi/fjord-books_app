@@ -12,7 +12,6 @@ class UsersController < ApplicationController
   end
 
   def followings
-    @title = t('views.follow.show_follow.followings')
     @users = @user.followings.order(:id)
     render 'user_relationships'
   end
