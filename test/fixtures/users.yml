@@ -7,13 +7,13 @@
 taro:
   name: "太郎"
   email: "taro@example.com"
-  encrypted_password: "111111"
+  encrypted_password: <%= Devise::Encryptor.digest(User, '111111') %>
   created_at: <%= Date.today %>
   updated_at: <%= Date.today %>
 
 hanako:
   name: "花子"
   email: hanako@example.com
-  encrypted_password: 111112
+  encrypted_password: <%= Devise::Encryptor.digest(User, '111112') %>
   created_at: <%= Date.today %>
   updated_at: <%= Date.today %>
