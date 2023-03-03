@@ -1,4 +1,6 @@
-require "application_system_test_case"
+# frozen_string_literal: true
+
+require 'application_system_test_case'
 
 class ReportsTest < ApplicationSystemTestCase
   setup do
@@ -9,12 +11,11 @@ class ReportsTest < ApplicationSystemTestCase
     visit root_path
 
     fill_in 'Eメール', with: @taro.email
-    fill_in 'パスワード', with: "111111"
+    fill_in 'パスワード', with: '111111'
     click_on 'ログイン'
   end
 
-  test "create report" do
-
+  test 'create report' do
     visit new_report_url
 
     fill_in 'タイトル', with: '晴れが好き'
@@ -24,8 +25,7 @@ class ReportsTest < ApplicationSystemTestCase
     assert_text '日報が作成されました。'
   end
 
-  test "update report" do
-
+  test 'update report' do
     visit edit_report_url(@report_written_by_taro.id)
 
     fill_in 'タイトル', with: '晴れが嫌い'
@@ -35,8 +35,7 @@ class ReportsTest < ApplicationSystemTestCase
     assert_text '日報が更新されました。'
   end
 
-  test "delete report" do
-
+  test 'delete report' do
     visit reports_url
 
     page.accept_confirm do

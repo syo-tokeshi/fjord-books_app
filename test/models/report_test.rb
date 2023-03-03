@@ -9,12 +9,12 @@ class ReportTest < ActiveSupport::TestCase
     @hanako = users(:hanako)
   end
 
-  test "editable?" do
+  test 'editable?' do
     assert_equal false, @report_written_by_taro.editable?(@hanako)
     assert_equal true, @report_written_by_taro.editable?(@taro)
   end
 
-  test "created_on" do
-    assert_equal Date.today, @report_written_by_taro.created_on
+  test 'created_on' do
+    assert_equal Time.zone.today, @report_written_by_taro.created_on
   end
 end
