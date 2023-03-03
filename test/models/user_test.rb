@@ -8,23 +8,27 @@ class UserTest < ActiveSupport::TestCase
     @hanako = users(:hanako)
   end
 
-  test "太郎が花子をフォローしているか確かめる" do
-    assert_equal  true, @taro.following?(@hanako)
+  test "following?(user)?" do
+    assert @taro.following?(@hanako)
+    assert_not @hanako.following?(@taro)
   end
 
-  test "花子が太郎にフォローされてるか確かめる" do
-    assert_equal  true, @hanako.followed_by?(@taro)
+  test " followed_by?(user)?" do
+    assert @hanako.followed_by?(@taro)
+    assert_not @taro.followed_by?(@hanako)
   end
 
-  test "花子は太郎をフォロー出来るか確かめる" do
-    assert @hanako.follow(@taro)
+  test "follow(user)" do
+    assert @taro.follow(@hanako)
+    assert_not_equal false, @hanako.follow(@taro)
   end
 
-  test "太郎が花子をアンフォロー出来るか確かめる" do
+  test "unfollow(user)" do
     assert @taro.unfollow(@hanako)
+    assert_not @hanako.unfollow(@taro)
   end
 
-  test "太郎の名前があれば名前を、なければメアドを返す" do
+  test "name_or_email" do
     assert_equal "太郎", @taro.name_or_email
     @taro.name = nil
     assert_equal "taro@example.com", @taro.name_or_email
