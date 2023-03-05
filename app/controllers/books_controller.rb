@@ -7,8 +7,7 @@ class BooksController < ApplicationController
     @books = Book.order(:id).page(params[:page])
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @book = Book.new
