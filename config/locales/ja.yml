@@ -247,7 +247,7 @@ ja:
       notice_destroy: "%{name}が削除されました。"
   comments:
     form:
-      create: コメントする
+      submit: 送信
       no_comments: コメントはまだありません
   relationships:
     create:
