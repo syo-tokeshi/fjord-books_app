@@ -36,7 +36,7 @@ class CommentsController < ApplicationController
   end
 
   def confirm_myself_posted_comment
-    redirect_to reports_url if @comment.user.id != current_user.id
+    redirect_to root_url if @comment.user.id != current_user.id
   end
 
   def comment_params

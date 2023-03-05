@@ -1,7 +1,7 @@
 <h2><%= Comment.model_name.human %></h2>
-<% if comments.any? %>
+<% if commentable.comments.any? %>
   <ul>
-    <% comments.each do |comment| %>
+    <% commentable.comments.each do |comment| %>
       <li>
         <p><%= t('activerecord.attributes.comment.content') %> : <%= comment.content %></p>
         <p><%= link_to comment.user.name_or_email, comment.user %> : <%= l comment.created_at, format: :short %></p>
