@@ -37,4 +37,12 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:content)
   end
+
+  def render_show_commentable
+    raise 'must implement in sub classes'
+  end
+
+  def set_commentable
+    raise 'must implement in sub classes'
+  end
 end
