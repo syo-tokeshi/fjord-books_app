@@ -6,4 +6,8 @@ class Report < ApplicationRecord
 
   validates :title, presence: true
   validates :content, presence: true
+
+  def editable?(target_user)
+    self.user == target_user
+  end
 end
