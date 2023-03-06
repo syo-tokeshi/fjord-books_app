@@ -2,7 +2,7 @@
 
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[edit update destroy]
-  before_action :confirm_myself_posted_comment, only: %i[edit update destroy]
+
   def create
     @comment = @commentable.comments.build(comment_params)
     @comment.user = current_user
@@ -32,11 +32,7 @@ class CommentsController < ApplicationController
   private
 
   def set_comment
-    @comment = Comment.find(params[:id])
-  end
-
-  def confirm_myself_posted_comment
-    redirect_to root_url if @comment.user.id != current_user.id
+    @comment = current_user.comments.find(params[:id])
   end
 
   def comment_params
