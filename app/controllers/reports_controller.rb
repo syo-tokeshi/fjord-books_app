@@ -4,7 +4,7 @@ class ReportsController < ApplicationController
   before_action :set_report, only: %i[show edit update destroy]
 
   def index
-    @reports = Report.preload([:user]).order(:id).page(params[:page])
+    @reports = Report.preload(:user).order(:id).page(params[:page])
   end
 
   def show; end
