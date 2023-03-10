@@ -6,7 +6,6 @@ class ReportsTest < ApplicationSystemTestCase
   setup do
     @report_written_by_taro = reports(:report_written_by_taro)
     @taro = users(:taro)
-    @hanako = users(:hanako)
 
     visit root_path
 
