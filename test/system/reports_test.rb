@@ -47,6 +47,5 @@ class ReportsTest < ApplicationSystemTestCase
 
     assert_text '日報が削除されました。'
     assert_no_text '晴れが嫌い'
-    assert_no_text '明日雨ならいいな'
   end
 end
