@@ -1,0 +1,17 @@
+<h2><%= Comment.model_name.human %></h2>
+<% if commentable.comments.exists? %>
+  <ul>
+    <% commentable.comments.preload(:user).order(:id).each do |comment| %>
+      <li>
+        <p><%= t('activerecord.attributes.comment.content') %> : <%= comment.content %></p>
+        <p><%= link_to comment.user.name_or_email, comment.user %> : <%= l comment.created_at, format: :short %></p>
+        <% if current_user == comment.user %>
+          <%= link_to t('views.common.edit'), [:edit, commentable, comment] %> |
+          <%= link_to t('views.common.destroy'), [commentable, comment], method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  (<%= t('comments.form.no_comments') %>)
+<% end %>
